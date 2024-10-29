@@ -1,0 +1,22 @@
+[package]
+name = "wfcue"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+anyhow = "1.0.91"
+blake3 = "1.5.4"
+claxon = "0.4.3"
+cue-rw = "0.2.1"
+hound = "3.5.1"
+indicatif = "0.17.8"
+num-traits = "0.2.19"
+thiserror = "1.0.65"
+wild = "2.2.1"
+inquire = "0.7.5"
+clap = { version = "4.5.20", features = ["derive"] }
+
+[dev-dependencies]
+serial_test = "3.1.1"
+duct = "0.13.7"
+duct_sh = "0.13.7"
