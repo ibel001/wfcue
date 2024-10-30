@@ -9,6 +9,8 @@ env:
 
 jobs:
   test:
+    permissions:
+      contents: write
     name: ${{ matrix.platform.os-name }} with rust ${{ matrix.toolchain }}
     runs-on: ${{ matrix.platform.runs-on }}
     strategy:
