@@ -48,11 +48,46 @@ jobs:
             name: wfcue-Linux-i686-musl.tar.gz
             skip_unit_tests: true
             skip_integration_tests: true
+          - os-name: Linux-powerpc
+            runs-on: ubuntu-20.04
+            target: powerpc-unknown-linux-gnu
+            bin: wfcue
+            name: wfcue-Linux-powerpc-gnu.tar.gz
+            skip_unit_tests: true
+            skip_integration_tests: true
+          - os-name: Linux-powerpc64
+            runs-on: ubuntu-20.04
+            target: powerpc64-unknown-linux-gnu
+            bin: wfcue
+            name: wfcue-Linux-powerpc64-gnu.tar.gz
+            skip_unit_tests: true
+            skip_integration_tests: true
+          - os-name: Linux-powerpc64le
+            runs-on: ubuntu-20.04
+            target: powerpc64le-unknown-linux-gnu
+            bin: wfcue
+            name: wfcue-Linux-powerpc64le.tar.gz
+            skip_unit_tests: true
+            skip_integration_tests: true
           - os-name: Linux-riscv64
             runs-on: ubuntu-20.04
             target: riscv64gc-unknown-linux-gnu
             bin: wfcue
             name: wfcue-Linux-riscv64gc-gnu.tar.gz
+            skip_integration_tests: true
+          - os-name: Linux-s390x
+            runs-on: ubuntu-20.04
+            target: s390x-unknown-linux-gnu
+            bin: wfcue
+            name: wfcue-Linux-s390x-gnu.tar.gz
+            skip_unit_tests: true
+            skip_integration_tests: true
+          - os-name: NetBSD-x86_64
+            runs-on: ubuntu-20.04
+            target: x86_64-unknown-netbsd
+            bin: wfcue
+            name: wfcue-NetBSD-x86_64.tar.gz
+            skip_unit_tests: true
             skip_integration_tests: true
           - os-name: Windows-aarch64
             runs-on: windows-latest
@@ -106,6 +141,9 @@ jobs:
         run: |
           git config --global user.email "jdoe@example.com"
           git config --global user.name "J. Doe"
+      - name: Cargo clean
+        run: |
+          cargo clean
       - name: Build binary
         uses: houseabsolute/actions-rust-cross@v0
         with:
